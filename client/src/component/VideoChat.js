@@ -1,11 +1,13 @@
 import React, { useState, useCallback } from 'react';
 import Lobby from './Lobby';
 import Room from './Room';
+import './convo/Video.css'
+import ConversationsApp from './ConversationApp';
 const VideoChat = () => {
   const [username, setUsername] = useState('');
   const [roomName, setRoomName] = useState('');
   const [token, setToken] = useState(null);
-
+const [convoId,setConvoId]=useState('');
   const handleUsernameChange = useCallback(event => {
     setUsername(event.target.value);
   }, []);
@@ -19,13 +21,17 @@ const VideoChat = () => {
       method: 'POST',
       body: JSON.stringify({
         identity: username,
-        roomName: roomName
+        roomName: roomName,
+        // convoId:localStorage.getItem('convoId')==='undefined'?'':localStorage.getItem('convoId'),
       }),
       headers: {
         'Content-Type': 'application/json'
       }
     }).then(res => res.json());
-    setToken(data.data);
+    console.log(data,'data')
+    setToken(data.data.token);
+    setConvoId(data.data.convoId);
+    // localStorage.setItem("convoId",data.data.convoId);
   }, [username, roomName]);
 
   const handleLogout = useCallback(event => {
@@ -35,9 +41,13 @@ const VideoChat = () => {
   let render;
   if (token) {
     render = (
-      <div>  
-              <Room roomName={roomName} token={token} handleLogout={handleLogout} />
-
+      <div className="row">  
+      <div className='col-lg-8'> 
+        <Room roomName={roomName} token={token} handleLogout={handleLogout} />
+           </div>
+           <div className='col-lg-4'>
+               <ConversationsApp token={token} name={username} />
+               </div>  
       </div>
     );
   } else {
