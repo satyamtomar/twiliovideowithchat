@@ -161,74 +161,9 @@ class ConversationsApp extends React.Component {
     }
 
       return (
-        <div className="conversations-window-wrapper">
-          <Layout className="conversations-window-container">
-            <Header
-              style={{ display: "flex", alignItems: "center", padding: 0 }}
-            >
-              <div
-                style={{
-                  maxWidth: "250px",
-                  width: "100%",
-                  display: "flex",
-                  alignItems: "center"
-                }}
-              >
-                <HeaderItem style={{ paddingRight: "0", display: "flex" }}>
-                  {/* <Logo /> */}
-                </HeaderItem>
-                <HeaderItem>
-                  <Text strong style={{ color: "white" }}>
-                    Conversations
-                  </Text>
-                </HeaderItem>
-              </div>
-              <div style={{ display: "flex", width: "100%" }}>
-                <HeaderItem>
-                  <Text strong style={{ color: "white" }}>
-                    {selectedConversation &&
-                      (selectedConversation.friendlyName || selectedConversation.sid)}
-                  </Text>
-                </HeaderItem>
-                <HeaderItem style={{ float: "right", marginLeft: "auto" }}>
-                  <span
-                    style={{ color: "white" }}
-                  >{` ${this.state.statusString}`}</span>
-                  <Badge
-                    dot={true}
-                    status={this.state.status}
-                    style={{ marginLeft: "1em" }}
-                  />
-                </HeaderItem>
-                <HeaderItem>
-                  {/* <Icon
-                    type="poweroff"
-                    onClick={this.logOut}
-                    style={{
-                      color: "white",
-                      fontSize: "20px",
-                      marginLeft: "auto"
-                    }}
-                  /> */}
-                </HeaderItem>
-              </div>
-            </Header>
-            <Layout>
-              <Sider theme={"light"} width={250}>
-                {/* <ConversationsList
-                  conversations={conversations}
-                  selectedConversationSid={selectedConversationSid}
-                  onConversationClick={(item) => {
-                    this.setState({ selectedConversationSid: item.sid });
-                  }}
-                /> */}
-              </Sider>
-              <Content className="conversation-section">
-                <div id="SelectedConversation">{conversationContent}</div>
-              </Content>
-            </Layout>
-          </Layout>
-        </div>
+     <>
+     
+     </>
       );
     
 

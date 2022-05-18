@@ -34,7 +34,7 @@ class Conversation extends Component {
   };
 
   componentDidMount = () => {
-    console.log("something");
+    // console.log("something");
       if (this.state.conversationProxy) {
         this.loadMessagesFor(this.state.conversationProxy);
 
