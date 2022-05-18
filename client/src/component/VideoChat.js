@@ -46,7 +46,7 @@ const [convoId,setConvoId]=useState('');
         <Room roomName={roomName} token={token} handleLogout={handleLogout} />
            </div>
            <div className='col-lg-4'>
-               <ConversationsApp token={token} name={username} />
+               <ConversationsApp token={token} name={username} room={roomName} />
                </div>  
       </div>
     );

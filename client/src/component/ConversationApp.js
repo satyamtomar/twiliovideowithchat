@@ -2,6 +2,7 @@ import React from "react";
 import { Badge, Icon, Layout, Spin, Typography } from "antd";
 import { Client as ConversationsClient } from "@twilio/conversations";
 import "./convo/Conversation.css";
+import './convo/style.css'
 import "./convo/ConversationSection.css";
 // import { ReactComponent as Logo } from "./convo/twilio-mark-red.svg";
 
@@ -142,7 +143,7 @@ class ConversationsApp extends React.Component {
   render() {
     const { conversations, selectedConversationSid, status } = this.state;
     const selectedConversation = conversations.find(
-      (it) => it.sid === selectedConversationSid
+      (it) => it.uniqueName === this.props.room
     );
 
     let conversationContent;
@@ -214,13 +215,13 @@ class ConversationsApp extends React.Component {
             </Header>
             <Layout>
               <Sider theme={"light"} width={250}>
-                <ConversationsList
+                {/* <ConversationsList
                   conversations={conversations}
                   selectedConversationSid={selectedConversationSid}
                   onConversationClick={(item) => {
                     this.setState({ selectedConversationSid: item.sid });
                   }}
-                />
+                /> */}
               </Sider>
               <Content className="conversation-section">
                 <div id="SelectedConversation">{conversationContent}</div>
