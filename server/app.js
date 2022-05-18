@@ -7,7 +7,7 @@ const cors=require('cors');
 const app = express();
 
 const port = 5001;
-const {ROOM_ROUTES} =require('./routes');
+const {ROOM_ROUTES,VIDEOCHAT_ROUTES} =require('./routes');
 // use the Express JSON middleware
 app.use(express.json());
 app.use(cors());
@@ -57,6 +57,7 @@ app.use(cors());
 //   };
 
 app.use('/',ROOM_ROUTES);
+app.use('/',VIDEOCHAT_ROUTES);
 // Start the Express server
 app.listen(port, () => {
   console.log(`Express server running on port ${port}`);
