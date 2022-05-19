@@ -1,6 +1,7 @@
 import MessageBubble from "./MessageBubble";
 import React, {PureComponent} from "react";
 import PropTypes from "prop-types";
+import './convo/style.css'
 
 class ConversationsMessages extends PureComponent {
   render = () => {

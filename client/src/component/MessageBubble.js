@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { Spin, Modal, Icon } from "antd";
 import WhatsappIcon from "./WhatsappIcon";
 import ChatIcon from "./ChatIcon";
+import './convo/style.css'
 
 class MessageBubble extends Component {
   constructor(props) {

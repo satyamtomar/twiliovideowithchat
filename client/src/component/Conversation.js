@@ -6,6 +6,7 @@ import styles from './convo/Conversation.module.css'
 import {Button, Form, Icon, Input} from "antd";
 import ConversationsMessages from "./ConversationsMessages";
 import PropTypes from "prop-types";
+import './convo/style.css'
 class Conversation extends Component {
   constructor(props) {
     super(props);

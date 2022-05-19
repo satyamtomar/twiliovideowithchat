@@ -1,6 +1,6 @@
 import React from 'react';
 import { List, Typography } from "antd";
-
+import './convo/style.css'
 import conversationsListStyles from "./convo/ConversationsList.module.css";
 import conversationsItemStyles from "./convo/ConversationsItem.module.css";
 
