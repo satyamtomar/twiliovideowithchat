@@ -24,14 +24,16 @@ div {
   margin-bottom: 1em;
   margin-left: 0.5em;
   margin-right: 0.5em;
-  height: 100%;
+  height: 100vh;
   overflow: scroll;
+  overflow-x: hidden !important;
 }
 
 #OpenChannel {
   display: flex;
   flex-basis: 100%;
   flex-direction: column;
+  background-color: #F6F6F8;
 }
 
 .nav-pills .nav-item {
